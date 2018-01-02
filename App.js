@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, Platform } from 'react-native';
 
 import StartSessionTimer from './src/StartSessionTimer';
 
@@ -22,12 +22,30 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         { this.state.loading ?
           null :
-          <StartSessionTimer/>
+          <View style={styles.contentContainer}>
+            <StartSessionTimer/>
+          </View>
         }
       </View>
     );
   }
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'blue'
+  },
+  contentContainer: {
+    flex: 1,
+    ...Platform.select({ 
+      android: {
+        marginTop: StatusBar.currentHeight
+      }
+    })
+  }
+});

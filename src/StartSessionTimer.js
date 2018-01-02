@@ -1,16 +1,34 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Container, Button, Text } from 'native-base';
+import { StyleSheet, View } from 'react-native';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 
-export default class StartSessionTimer extends React.Component {
+class StartSessionTimer extends React.Component {
   render() {
     return (
       <Container>
-        <Button>
+        <Header>
+          <Left>
+            <Button transparent>
+              <Icon name='menu' />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Header</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content>
           <Text>
-            hello
+            This is Content Section
           </Text>
-        </Button>
+        </Content>
+        <Footer>
+          <FooterTab>
+            <Button full>
+              <Text>Footer</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
       </Container>
     );
   }
@@ -18,7 +36,10 @@ export default class StartSessionTimer extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F8F8F8',
-    flex: 1
-  }
+    backgroundColor: 'green',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
 });
+
+export default StartSessionTimer;
