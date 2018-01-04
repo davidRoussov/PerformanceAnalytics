@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, Platform } from 'react-native';
 
-import StartSessionTimer from './src/StartSessionTimer';
+import Layout from './src/Layout';
 
 export default class App extends React.Component {
   constructor() {
@@ -26,7 +26,7 @@ export default class App extends React.Component {
         { this.state.loading ?
           null :
           <View style={styles.contentContainer}>
-            <StartSessionTimer/>
+            <Layout/>
           </View>
         }
       </View>
@@ -38,7 +38,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue'
+    backgroundColor: '#F0F0F0'
   },
   contentContainer: {
     flex: 1,

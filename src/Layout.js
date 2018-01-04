@@ -2,7 +2,15 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 
-class StartSessionTimer extends React.Component {
+import SessionTimer from './SessionTimer';
+
+class Layout extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      title: 'New Session'
+    }
+  }
   render() {
     return (
       <Container>
@@ -13,15 +21,13 @@ class StartSessionTimer extends React.Component {
             </Button>
           </Left>
           <Body>
-            <Title>Header</Title>
+            <Title>{ this.state.title }</Title>
           </Body>
           <Right />
         </Header>
-        <Content>
-          <Text>
-            This is Content Section
-          </Text>
-        </Content>
+        <View style={styles.container}>
+          <SessionTimer/>
+        </View>
         <Footer>
           <FooterTab>
             <Button full>
@@ -36,10 +42,8 @@ class StartSessionTimer extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'green',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
+    flex: 1
+  }
 });
 
-export default StartSessionTimer;
+export default Layout;
